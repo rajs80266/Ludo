@@ -1,0 +1,2898 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ludo</title>
+		<link rel="stylesheet" href="styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#dicer").click(function(){
+					$("#wdr").hide();
+					
+					for($i=10;$i>=1;$i--)
+					{
+						setTimeout(function(){
+							$random = Math.floor(Math.random()*6);
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#dicer6").hide();
+							if($random==0)
+								$("#dicer1").show();
+							else if($random==1)
+								$("#dicer2").show();
+							else if($random==2)
+								$("#dicer3").show();
+							else if($random==3)
+								$("#dicer4").show();
+							else if($random==4)
+								$("#dicer5").show();
+							else if($random==5)
+								$("#dicer6").show();
+						},(50*$i));
+					}
+					setTimeout(function(){
+						$("#r1").click(function(){
+							if($("#dicer6").is(":visible"))
+							{
+								$("#r1").hide();
+								$("#dicer6").hide();
+								$("#wdr").show();
+								$("#wr1").show();
+								$("#rd1").show();
+							}
+						});
+						$("#r2").click(function(){
+							if($("#dicer6").is(":visible"))
+							{
+								$("#r2").hide();
+								$("#dicer6").hide();
+								$("#wdr").show();
+								$("#wr2").show();
+								$("#rd1").show();
+							}	
+						});
+						$("#r3").click(function(){
+							if($("#dicer6").is(":visible"))
+							{
+								$("#r3").hide();
+								$("#dicer6").hide();
+								$("#wdr").show();
+								$("#wr3").show();
+								$("#rd1").show();
+							}	
+						});
+						$("#r4").click(function(){
+							if($("#dicer6").is(":visible"))
+							{
+								$("#r4").hide();
+								$("#dicer6").hide();
+								$("#wdr").show();
+								$("#wr4").show();
+								$("#rd1").show();
+							}	
+						});
+						/*for($z=1;$z<=52;$z++)
+						{
+							$z=1;
+							$y=parseInt($z);
+							$s="#rd"+$y;
+							$($s).click(function(){
+								$($s).hide();
+								$y=parseInt(parseInt($z)+parseInt($random)+parseInt(1));
+								$s='#rd'+$y;
+								$($s).show();
+							});
+						}*/
+						
+						$("#rd1").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd1").hide();
+							$y=parseInt(parseInt($random)+parseInt(2));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						
+						$("#rd2").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd2").hide();
+							$y=parseInt(parseInt($random)+parseInt(3));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd3").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd3").hide();
+							$y=parseInt(parseInt($random)+parseInt(4));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd4").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd4").hide();
+							$y=parseInt(parseInt($random)+parseInt(5));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd5").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd5").hide();
+							$y=parseInt(parseInt($random)+parseInt(6));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd6").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd6").hide();
+							$y=parseInt(parseInt($random)+parseInt(7));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd7").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd7").hide();
+							$y=parseInt(parseInt($random)+parseInt(8));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd8").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd8").hide();
+							$y=parseInt(parseInt($random)+parseInt(9));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd9").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd9").hide();
+							$y=parseInt(parseInt($random)+parseInt(10));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd10").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd10").hide();
+							$y=parseInt(parseInt($random)+parseInt(11));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd11").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd11").hide();
+							$y=parseInt(parseInt($random)+parseInt(12));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd12").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd12").hide();
+							$y=parseInt(parseInt($random)+parseInt(13));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd13").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd13").hide();
+							$y=parseInt(parseInt($random)+parseInt(14));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd14").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd14").hide();
+							$y=parseInt(parseInt($random)+parseInt(15));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd15").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd15").hide();
+							$y=parseInt(parseInt($random)+parseInt(16));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd16").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd16").hide();
+							$y=parseInt(parseInt($random)+parseInt(17));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd17").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd17").hide();
+							$y=parseInt(parseInt($random)+parseInt(18));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd18").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd18").hide();
+							$y=parseInt(parseInt($random)+parseInt(19));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd19").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd19").hide();
+							$y=parseInt(parseInt($random)+parseInt(20));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd20").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd20").hide();
+							$y=parseInt(parseInt($random)+parseInt(21));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd21").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd21").hide();
+							$y=parseInt(parseInt($random)+parseInt(22));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd22").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd22").hide();
+							$y=parseInt(parseInt($random)+parseInt(23));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd23").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd23").hide();
+							$y=parseInt(parseInt($random)+parseInt(24));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd24").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd24").hide();
+							$y=parseInt(parseInt($random)+parseInt(25));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd25").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd25").hide();
+							$y=parseInt(parseInt($random)+parseInt(26));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd26").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd26").hide();
+							$y=parseInt(parseInt($random)+parseInt(27));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd27").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd27").hide();
+							$y=parseInt(parseInt($random)+parseInt(28));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd28").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd28").hide();
+							$y=parseInt(parseInt($random)+parseInt(29));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd29").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd29").hide();
+							$y=parseInt(parseInt($random)+parseInt(30));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd30").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd30").hide();
+							$y=parseInt(parseInt($random)+parseInt(31));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd31").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd31").hide();
+							$y=parseInt(parseInt($random)+parseInt(32));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd32").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd32").hide();
+							$y=parseInt(parseInt($random)+parseInt(33));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd33").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd33").hide();
+							$y=parseInt(parseInt($random)+parseInt(34));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd34").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd34").hide();
+							$y=parseInt(parseInt($random)+parseInt(35));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd35").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd35").hide();
+							$y=parseInt(parseInt($random)+parseInt(36));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd36").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd36").hide();
+							$y=parseInt(parseInt($random)+parseInt(37));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd37").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd37").hide();
+							$y=parseInt(parseInt($random)+parseInt(38));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd38").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd38").hide();
+							$y=parseInt(parseInt($random)+parseInt(39));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd39").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd39").hide();
+							$y=parseInt(parseInt($random)+parseInt(40));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd40").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd40").hide();
+							$y=parseInt(parseInt($random)+parseInt(41));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd41").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd41").hide();
+							$y=parseInt(parseInt($random)+parseInt(42));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd42").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd42").hide();
+							$y=parseInt(parseInt($random)+parseInt(43));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd43").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd43").hide();
+							$y=parseInt(parseInt($random)+parseInt(44));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd44").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd44").hide();
+							$y=parseInt(parseInt($random)+parseInt(45));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd45").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd45").hide();
+							$y=parseInt(parseInt($random)+parseInt(46));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd46").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd46").hide();
+							$y=parseInt(parseInt($random)+parseInt(47));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd47").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd47").hide();
+							$y=parseInt(parseInt($random)+parseInt(48));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd48").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd48").hide();
+							$y=parseInt(parseInt($random)+parseInt(49));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd49").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd49").hide();
+							$y=parseInt(parseInt($random)+parseInt(50));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd50").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd50").hide();
+							$y=parseInt(parseInt($random)+parseInt(51));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd51").click(function(){
+							$("#dicer1").hide();
+							$("#dicer2").hide();
+							$("#dicer3").hide();
+							$("#dicer4").hide();
+							$("#dicer5").hide();
+							$("#wdr").show();
+							$("#rd51").hide();
+							$y=parseInt(parseInt($random)+parseInt(52));
+							$s='#rd'+$y;
+							$($s).show();
+						});
+						$("#rd52").click(function(){
+							if($random<5)
+							{
+								$("#dicer1").hide();
+								$("#dicer2").hide();
+								$("#dicer3").hide();
+								$("#dicer4").hide();
+								$("#dicer5").hide();
+								$("#wdr").show();
+								$("#rd52").hide();
+								$y=parseInt(parseInt($random)+parseInt(53));
+								$s='#rd'+$y;
+								$($s).show();
+							}	
+						});
+						$("#rd53").click(function(){
+							if($random<4)
+							{
+								$("#dicer1").hide();
+								$("#dicer2").hide();
+								$("#dicer3").hide();
+								$("#dicer4").hide();
+								$("#dicer5").hide();
+								$("#wdr").show();
+								$("#rd53").hide();
+								$y=parseInt(parseInt($random)+parseInt(54));
+								$s='#rd'+$y;
+								$($s).show();
+							}	
+						});
+						$("#rd54").click(function(){
+							if($random<3)
+							{
+								
+								$("#dicer1").hide();
+								$("#dicer2").hide();
+								$("#dicer3").hide();
+								$("#dicer4").hide();
+								$("#dicer5").hide();
+								$("#wdr").show();
+								$("#rd54").hide();
+								$y=parseInt(parseInt($random)+parseInt(55));
+								$s='#rd'+$y;
+								$($s).show();
+							}	
+						});
+						$("#rd55").click(function(){
+							if($random<2)
+							{
+								$("#dicer1").hide();
+								$("#dicer2").hide();
+								$("#dicer3").hide();
+								$("#dicer4").hide();
+								$("#dicer5").hide();
+								$("#rd55").hide();
+								$("#wdr").show();
+								$y=parseInt(parseInt($random)+parseInt(56));
+								$s='#rd'+$y;
+								$($s).show();
+							}	
+						});
+						$("#rd56").click(function(){
+							if($random<1)
+							{
+								$("#dicer1").hide();
+								$("#dicer2").hide();
+								$("#dicer3").hide();
+								$("#dicer4").hide();
+								$("#dicer5").hide();
+								$("#wdr").show();
+								$("#rd56").hide();
+								$y=parseInt(parseInt($random)+parseInt(57));
+								$s='#rd'+$y;
+								$($s).show();
+							}	
+						});
+					},1000);
+				});
+				
+				
+				
+				$("#diceg").click(function(){
+					$("#wdg").hide();
+					
+					for($i=10;$i>=1;$i--)
+					{
+						setTimeout(function(){
+							$random = Math.floor(Math.random()*6);
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#diceg6").hide();
+							if($random==0)
+								$("#diceg1").show();
+							else if($random==1)
+								$("#diceg2").show();
+							else if($random==2)
+								$("#diceg3").show();
+							else if($random==3)
+								$("#diceg4").show();
+							else if($random==4)
+								$("#diceg5").show();
+							else if($random==5)
+								$("#diceg6").show();
+						},(50*$i));
+					}
+					setTimeout(function(){
+						$("#g1").click(function(){
+							if($("#diceg6").is(":visible"))
+							{
+								$("#g1").hide();
+								$("#diceg6").hide();
+								$("#wdg").show();
+								$("#wg1").show();
+								$("#gd27").show();
+							}
+						});
+						$("#g2").click(function(){
+							if($("#diceg6").is(":visible"))
+							{
+								$("#g2").hide();
+								$("#diceg6").hide();
+								$("#wdg").show();
+								$("#wg2").show();
+								$("#gd27").show();
+							}	
+						});
+						$("#g3").click(function(){
+							if($("#diceg6").is(":visible"))
+							{
+								$("#g3").hide();
+								$("#diceg6").hide();
+								$("#wdg").show();
+								$("#wg3").show();
+								$("#gd27").show();
+							}	
+						});
+						$("#g4").click(function(){
+							if($("#diceg6").is(":visible"))
+							{
+								$("#g4").hide();
+								$("#diceg6").hide();
+								$("#wdg").show();
+								$("#wg4").show();
+								$("#gd27").show();
+							}	
+						});
+						/*for($z=1;$z<=52;$z++)
+						{
+							$z=1;
+							$y=parseInt($z);
+							$s="#gd"+$y;
+							$($s).click(function(){
+								$($s).hide();
+								$y=parseInt(parseInt($z)+parseInt($random)+parseInt(1));
+								$s='#gd'+$y;
+								$($s).show();
+							});
+						}*/
+						
+						$("#gd1").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd1").hide();
+							$y=parseInt(parseInt($random)+parseInt(2));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						
+						$("#gd2").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd2").hide();
+							$y=parseInt(parseInt($random)+parseInt(3));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd3").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd3").hide();
+							$y=parseInt(parseInt($random)+parseInt(4));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd4").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd4").hide();
+							$y=parseInt(parseInt($random)+parseInt(5));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd5").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd5").hide();
+							$y=parseInt(parseInt($random)+parseInt(6));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd6").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd6").hide();
+							$y=parseInt(parseInt($random)+parseInt(7));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd7").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd7").hide();
+							$y=parseInt(parseInt($random)+parseInt(8));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd8").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd8").hide();
+							$y=parseInt(parseInt($random)+parseInt(9));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd9").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd9").hide();
+							$y=parseInt(parseInt($random)+parseInt(10));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd10").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd10").hide();
+							$y=parseInt(parseInt($random)+parseInt(11));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd11").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd11").hide();
+							$y=parseInt(parseInt($random)+parseInt(12));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd12").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd12").hide();
+							$y=parseInt(parseInt($random)+parseInt(13));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd13").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd13").hide();
+							$y=parseInt(parseInt($random)+parseInt(14));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd14").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd14").hide();
+							$y=parseInt(parseInt($random)+parseInt(15));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd15").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd15").hide();
+							$y=parseInt(parseInt($random)+parseInt(16));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd16").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd16").hide();
+							$y=parseInt(parseInt($random)+parseInt(17));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd17").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd17").hide();
+							$y=parseInt(parseInt($random)+parseInt(18));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd18").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd18").hide();
+							$y=parseInt(parseInt($random)+parseInt(19));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd19").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd19").hide();
+							$y=parseInt(parseInt($random)+parseInt(20));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd20").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd20").hide();
+							$y=parseInt(parseInt($random)+parseInt(21));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd21").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd21").hide();
+							$y=parseInt(parseInt($random)+parseInt(22));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd22").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd22").hide();
+							$y=parseInt(parseInt($random)+parseInt(23));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd23").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd23").hide();
+							$y=parseInt(parseInt($random)+parseInt(24));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd24").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd24").hide();
+							$y=parseInt(parseInt($random)+parseInt(25));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd25").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd25").hide();
+							$y=parseInt(parseInt($random)+parseInt(26));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						
+						$("#gd26").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd26").hide();
+							$y=parseInt(parseInt($random)+parseInt(27));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd27").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd27").hide();
+							$y=parseInt(parseInt($random)+parseInt(28));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd28").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd28").hide();
+							$y=parseInt(parseInt($random)+parseInt(29));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd29").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd29").hide();
+							$y=parseInt(parseInt($random)+parseInt(30));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd30").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd30").hide();
+							$y=parseInt(parseInt($random)+parseInt(31));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd31").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd31").hide();
+							$y=parseInt(parseInt($random)+parseInt(32));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd32").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd32").hide();
+							$y=parseInt(parseInt($random)+parseInt(33));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd33").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd33").hide();
+							$y=parseInt(parseInt($random)+parseInt(34));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd34").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd34").hide();
+							$y=parseInt(parseInt($random)+parseInt(35));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd35").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd35").hide();
+							$y=parseInt(parseInt($random)+parseInt(36));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd36").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd36").hide();
+							$y=parseInt(parseInt($random)+parseInt(37));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd37").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd37").hide();
+							$y=parseInt(parseInt($random)+parseInt(38));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd38").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd38").hide();
+							$y=parseInt(parseInt($random)+parseInt(39));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd39").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd39").hide();
+							$y=parseInt(parseInt($random)+parseInt(40));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd40").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd40").hide();
+							$y=parseInt(parseInt($random)+parseInt(41));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd41").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd41").hide();
+							$y=parseInt(parseInt($random)+parseInt(42));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd42").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd42").hide();
+							$y=parseInt(parseInt($random)+parseInt(43));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd43").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd43").hide();
+							$y=parseInt(parseInt($random)+parseInt(44));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd44").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd44").hide();
+							$y=parseInt(parseInt($random)+parseInt(45));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd45").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd45").hide();
+							$y=parseInt(parseInt($random)+parseInt(46));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd46").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd46").hide();
+							$y=parseInt(parseInt($random)+parseInt(47));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd47").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd47").hide();
+							$y=parseInt(parseInt($random)+parseInt(48));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd48").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd48").hide();
+							$y=parseInt(parseInt($random)+parseInt(49));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd49").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd49").hide();
+							$y=parseInt(parseInt($random)+parseInt(50));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd50").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd50").hide();
+							$y=parseInt(parseInt($random)+parseInt(51));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd51").click(function(){
+							$("#diceg1").hide();
+							$("#diceg2").hide();
+							$("#diceg3").hide();
+							$("#diceg4").hide();
+							$("#diceg5").hide();
+							$("#wdg").show();
+							$("#gd51").hide();
+							$y=parseInt(parseInt($random)+parseInt(52));
+							$s='#gd'+$y;
+							$($s).show();
+						});
+						$("#gd52").click(function(){
+							if($random<5)
+							{
+								$("#diceg1").hide();
+								$("#diceg2").hide();
+								$("#diceg3").hide();
+								$("#diceg4").hide();
+								$("#diceg5").hide();
+								$("#wdg").show();
+								$("#gd52").hide();
+								$y=parseInt(parseInt($random)+parseInt(53));
+								$s='#gd'+$y;
+								$($s).show();
+							}	
+						});
+						$("#gd53").click(function(){
+							if($random<4)
+							{
+								$("#diceg1").hide();
+								$("#diceg2").hide();
+								$("#diceg3").hide();
+								$("#diceg4").hide();
+								$("#diceg5").hide();
+								$("#wdg").show();
+								$("#gd53").hide();
+								$y=parseInt(parseInt($random)+parseInt(54));
+								$s='#gd'+$y;
+								$($s).show();
+							}	
+						});
+						$("#gd54").click(function(){
+							if($random<3)
+							{
+								
+								$("#diceg1").hide();
+								$("#diceg2").hide();
+								$("#diceg3").hide();
+								$("#diceg4").hide();
+								$("#diceg5").hide();
+								$("#wdg").show();
+								$("#gd54").hide();
+								$y=parseInt(parseInt($random)+parseInt(55));
+								$s='#gd'+$y;
+								$($s).show();
+							}	
+						});
+						$("#gd55").click(function(){
+							if($random<2)
+							{
+								$("#diceg1").hide();
+								$("#diceg2").hide();
+								$("#diceg3").hide();
+								$("#diceg4").hide();
+								$("#diceg5").hide();
+								$("#gd55").hide();
+								$("#wdg").show();
+								$y=parseInt(parseInt($random)+parseInt(56));
+								$s='#gd'+$y;
+								$($s).show();
+							}	
+						});
+						$("#gd56").click(function(){
+							if($random<1)
+							{
+								$("#diceg1").hide();
+								$("#diceg2").hide();
+								$("#diceg3").hide();
+								$("#diceg4").hide();
+								$("#diceg5").hide();
+								$("#wdg").show();
+								$("#gd56").hide();
+								$y=parseInt(parseInt($random)+parseInt(57));
+								$s='#gd'+$y;
+								$($s).show();
+							}	
+						});
+					},1000);
+				});
+				
+				
+				
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div id="diceg">
+			<center><img src="green6.png" id="diceg6"><center>
+			<center><img src="green5.png" id="diceg5"><center>
+			<center><img src="green4.png" id="diceg4"><center>
+			<center><img src="green3.png" id="diceg3"><center>
+			<center><img src="green2.png" id="diceg2"><center>
+			<center><img src="green1.png" id="diceg1"><center>
+			<center><img src="white_square.png" id="wdg" style="width : 15%"><center>
+		</div>
+		<div>
+			<table style="float:left">
+				<tr>
+					<td><img src="blue_square.png" class="sqr"></td>
+					<td><img src="blue_square.png" class="sqr"></td>
+					<td><img src="blue_square.png" class="sqr"></td>
+					<td><img src="blue_square.png" class="sqr"></td>
+					<td><img src="blue_square.png" class="sqr"></td>
+					<td><img src="blue_square.png" class="sqr"></td>
+				</tr>
+				<tr>
+					<tr>
+						<td><img src="blue_square.png" class="sqr"></td>
+						<td rowspan="2" colspan="2"><center><img src="blue_circle.png" id="b1"><img src="white_circle.png" id="wb1"></center></td>
+						<td rowspan="2" colspan="2"><center><img src="blue_circle.png" id="b2"><img src="white_circle.png" id="wb2"></center></td>
+						<td><img src="blue_square.png" class="sqr"></td>
+					</tr>
+					<tr>
+						<td><img src="blue_square.png" class="sqr"></td>
+						<td><img src="blue_square.png" class="sqr"></td>
+					</tr>
+				</tr>
+				<tr>
+					<tr>
+						<td><img src="blue_square.png" class="sqr"></td>
+						<td rowspan="2" colspan="2"><center><img src="blue_circle.png" id="b3"><img src="white_circle.png" id="wb3"></center></td>
+						<td rowspan="2" colspan="2"><center><img src="blue_circle.png" id="b4"><img src="white_circle.png" id="wb4"></center></td>
+						<td><img src="blue_square.png" class="sqr"></td>
+					</tr>
+					<tr>
+						<td><img src="blue_square.png" class="sqr"></td>
+						<td><img src="blue_square.png" class="sqr"></td>
+					</tr>
+				</tr>
+				<tr>
+					<td><img src="blue_square.png" class="sqr"></td>
+					<td><img src="blue_square.png" class="sqr"></td>
+					<td><img src="blue_square.png" class="sqr"></td>
+					<td><img src="blue_square.png" class="sqr"></td>
+					<td><img src="blue_square.png" class="sqr"></td>
+					<td><img src="blue_square.png" class="sqr"></td>
+				</tr>
+			</table>
+			<table style="float:left">
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd24">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd24">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd24">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd24">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd25">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd25">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd25">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd25">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd26">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd26">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd26">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd26">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd23">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd23">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd23">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd23">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="green_square.png" class="sqr">
+							<div class="centered">
+								<img src="green_circle.png" id="gd52">
+							</div>
+						</div>					
+					</td>
+					<td>
+						<div class="container">
+							<img src="green_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd27">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd27">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd27">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd27">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="container">
+							<img src="star.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd22">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd22">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd22">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd22">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="green_square.png" class="sqr">
+							<div class="centered">
+								<img src="green_circle.png" id="gd53">
+							</div>
+						</div>					
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd28">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd28">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd28">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd28">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd21">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd21">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd21">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd21">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="green_square.png" class="sqr">
+							<div class="centered">
+								<img src="green_circle.png" id="gd54">
+							</div>
+						</div>					
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd29">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd29">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd29">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd29">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd20">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd20">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd20">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd20">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="green_square.png" class="sqr">
+							<div class="centered">
+								<img src="green_circle.png" id="gd55">
+							</div>
+						</div>					
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd30">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd30">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd30">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd30">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd19">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd19">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd19">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd19">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="green_square.png" class="sqr">
+							<div class="centered">
+								<img src="green_circle.png" id="gd56">
+							</div>
+						</div>					
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd31">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd31">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd31">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd31">
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<table style="float:left">
+				<tr>
+					<td><img src="green_square.png" class="sqr"></td>
+					<td><img src="green_square.png" class="sqr"></td>
+					<td><img src="green_square.png" class="sqr"></td>
+					<td><img src="green_square.png" class="sqr"></td>
+					<td><img src="green_square.png" class="sqr"></td>
+					<td><img src="green_square.png" class="sqr"></td>
+				</tr>
+				<tr>
+					<tr>
+						<td><img src="green_square.png" class="sqr"></td>
+						<td rowspan="2" colspan="2"><center><img src="green_circle.png" id="g1"><img src="white_circle.png" id="wg1"></center></td>
+						<td rowspan="2" colspan="2"><center><img src="green_circle.png" id="g2"><img src="white_circle.png" id="wg2"></center></td>
+						<td><img src="green_square.png" class="sqr"></td>
+					</tr>
+					<tr>
+						<td><img src="green_square.png" class="sqr"></td>
+						<td><img src="green_square.png" class="sqr"></td>
+					</tr>
+				</tr>
+				<tr>
+					<tr>
+						<td><img src="green_square.png" class="sqr"></td>
+						<td rowspan="2" colspan="2"><center><img src="green_circle.png" id="g3"><img src="white_circle.png" id="wg3"></center></td>
+						<td rowspan="2" colspan="2"><center><img src="green_circle.png" id="g4"><img src="white_circle.png" id="wg4"></center></td>
+						<td><img src="green_square.png" class="sqr"></td>
+					</tr>
+					<tr>
+						<td><img src="green_square.png" class="sqr"></td>
+						<td><img src="green_square.png" class="sqr"></td>
+					</tr>
+				</tr>
+				<tr>
+					<td><img src="green_square.png" class="sqr"></td>
+					<td><img src="green_square.png" class="sqr"></td>
+					<td><img src="green_square.png" class="sqr"></td>
+					<td><img src="green_square.png" class="sqr"></td>
+					<td><img src="green_square.png" class="sqr"></td>
+					<td><img src="green_square.png" class="sqr"></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div>
+			<table style="float:left">
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd13">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd13">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd13">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd13">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="blue_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd14">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd14">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd14">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd14">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd15">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd15">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd15">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd15">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd16">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd16">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd16">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd16">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd17">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd17">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd17">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd17">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd18">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd18">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd18">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd18">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd12">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd12">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd12">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd12">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="blue_square.png" class="sqr">
+							<div class="centered">
+								<img src="blue_circle.png" id="bd52">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="blue_square.png" class="sqr">
+							<div class="centered">
+								<img src="blue_circle.png" id="bd53">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="blue_square.png" class="sqr">
+							<div class="centered">
+								<img src="blue_circle.png" id="bd54">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="blue_square.png" class="sqr">
+							<div class="centered">
+								<img src="blue_circle.png" id="bd55">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="blue_square.png" class="sqr">
+							<div class="centered">
+								<img src="blue_circle.png" id="bd56">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd11">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd11">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd11">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd11">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd10">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd10">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd10">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd10">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="star.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd9">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd9">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd9">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd9">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd8">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd8">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd8">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd8">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd7">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd7">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd7">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd7">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd6">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd6">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd6">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd6">
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<table style="float:left">
+				<tr>
+					<td>
+						<img src="black_square.png" class="sqr">
+					</td>
+					<td>
+						<div class="container">
+							<img src="green_square.png" class="sqr">
+							<div class="centered">
+								<img src="green_circle.png" id="gd57">
+							</div>
+						</div>					
+					</td>
+					<td><img src="black_square.png" class="sqr"></td>
+				</tr>
+				<tr>
+					<td>
+						<div class="container">
+							<img src="blue_square.png" class="sqr">
+							<div class="centered">
+								<img src="blue_circle.png" id="bd57">
+							</div>
+						</div>
+					</td>
+					<td><img src="black_square.png" class="sqr"></td>
+					<td>
+						<div class="container">
+							<img src="yellow_square.png" class="sqr">
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd57">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><img src="black_square.png" class="sqr"></td>
+					<td>
+						<div class="container">
+							<img src="red_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd57">
+							</div>
+						</div>
+					</td>
+					<td><img src="black_square.png" class="sqr"></td>
+				</tr>
+			</table>
+			<table style="float:left">
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd32">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd32">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd32">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd32">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd33">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd33">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd33">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd33">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd34">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd34">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd34">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd34">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="star.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd35">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd35">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd35">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd35">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd36">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd36">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd36">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd36">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd37">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd37">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd37">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd37">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>	
+						<div class="container">
+							<img src="yellow_square.png" class="sqr">
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd56">
+							</div>
+						</div>
+					</td>
+					<td>	
+						<div class="container">
+							<img src="yellow_square.png" class="sqr">
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd55">
+							</div>
+						</div>
+					</td>
+					<td>	
+						<div class="container">
+							<img src="yellow_square.png" class="sqr">
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd54">
+							</div>
+						</div>
+					</td>
+					<td>	
+						<div class="container">
+							<img src="yellow_square.png" class="sqr">
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd53">
+							</div>
+						</div>
+					</td>
+					<td>	
+						<div class="container">
+							<img src="yellow_square.png" class="sqr">
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd52">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd38">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd38">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd38">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd38">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd44">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd44">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd44">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd44">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd43">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd43">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd43">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd43">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd42">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd42">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd42">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd42">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd41">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd41">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd41">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd41">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="yellow_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd40">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd40">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd40">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd40">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd39">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd39">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd39">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd39">
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div>
+			<table style="float:left">
+				<tr>
+					<td><img src="red_square.png" class="sqr"></td>
+					<td><img src="red_square.png" class="sqr"></td>
+					<td><img src="red_square.png" class="sqr"></td>
+					<td><img src="red_square.png" class="sqr"></td>
+					<td><img src="red_square.png" class="sqr"></td>
+					<td><img src="red_square.png" class="sqr"></td>
+				</tr>
+				<tr>
+					<tr>
+						<td><img src="red_square.png" class="sqr"></td>
+						<td rowspan="2" colspan="2"><center><img src="red_circle.png" id="r1"><img src="white_circle.png" id="wr1"></center></td>
+						<td rowspan="2" colspan="2"><center><img src="red_circle.png" id="r2"><img src="white_circle.png" id="wr2"></center></td>
+						<td><img src="red_square.png" class="sqr"></td>
+					</tr>
+					<tr>
+						<td><img src="red_square.png" class="sqr"></td>
+						<td><img src="red_square.png" class="sqr"></td>
+					</tr>
+				</tr>
+				<tr>
+					<tr>
+						<td><img src="red_square.png" class="sqr"></td>
+						<td rowspan="2" colspan="2"><center><img src="red_circle.png" id="r3"><img src="white_circle.png" id="wr3"></center></td>
+						<td rowspan="2" colspan="2"><center><img src="red_circle.png" id="r4"><img src="white_circle.png" id="wr4"></center></td>
+						<td><img src="red_square.png" class="sqr"></td>
+					</tr>
+					<tr>
+						<td><img src="red_square.png" class="sqr"></td>
+						<td><img src="red_square.png" class="sqr"></td>
+					</tr>
+				</tr>
+				<tr>
+					<td><img src="red_square.png" class="sqr"></td>
+					<td><img src="red_square.png" class="sqr"></td>
+					<td><img src="red_square.png" class="sqr"></td>
+					<td><img src="red_square.png" class="sqr"></td>
+					<td><img src="red_square.png" class="sqr"></td>
+					<td><img src="red_square.png" class="sqr"></td>
+				</tr>
+			</table>
+			<table style="float:left">
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd5">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd5">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd5">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd5">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="red_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd56">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd45">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd45">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd45">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd45">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd4">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd4">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd4">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd4">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="red_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd55">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd46">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd46">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd46">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd46">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd3">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd3">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd3">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd3">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="red_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd54">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd47">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd47">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd47">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd47">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd2">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd2">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd2">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd2">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="red_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd53">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="star.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd48">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd48">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd48">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd48">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="container">
+							<img src="red_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd1">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd1">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd1">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd1">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="red_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd52">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd49">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd49">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd49">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd49">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd52">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd52">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd52">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd52">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd51">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd51">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd51">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd51">
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="container">
+							<img src="white_square.png" class="sqr">
+							<div class="centered">
+								<img src="red_circle.png" id="rd50">
+							</div>
+							<div class="centered">
+								<img src="green_circle.png" id="gd50">
+							</div>
+							<div class="centered">
+								<img src="blue_circle.png" id="bd50">
+							</div>
+							<div class="centered">
+								<img src="yellow_circle.png" id="yd50">
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<table style="float:left">
+				<tr>
+					<td><img src="yellow_square.png" class="sqr"></td>
+					<td><img src="yellow_square.png" class="sqr"></td>
+					<td><img src="yellow_square.png" class="sqr"></td>
+					<td><img src="yellow_square.png" class="sqr"></td>
+					<td><img src="yellow_square.png" class="sqr"></td>
+					<td><img src="yellow_square.png" class="sqr"></td>
+				</tr>
+				<tr>
+					<tr>
+						<td><img src="yellow_square.png" class="sqr"></td>
+						<td rowspan="2" colspan="2"><center><img src="yellow_circle.png" id="y1"><img src="white_circle.png" id="wy1"></center></td>
+						<td rowspan="2" colspan="2"><center><img src="yellow_circle.png" id="y2"><img src="white_circle.png" id="wy2"></center></td>
+						<td><img src="yellow_square.png" class="sqr"></td>
+					</tr>
+					<tr>
+						<td><img src="yellow_square.png" class="sqr"></td>
+						<td><img src="yellow_square.png" class="sqr"></td>
+					</tr>
+				</tr>
+				<tr>
+					<tr>
+						<td><img src="yellow_square.png" class="sqr"></td>
+						<td rowspan="2" colspan="2"><center><img src="yellow_circle.png" id="y3"><img src="white_circle.png" id="wy3"></center></td>
+						<td rowspan="2" colspan="2"><center><img src="yellow_circle.png" id="y4"><img src="white_circle.png" id="wy4"></center></td>
+						<td><img src="yellow_square.png" class="sqr"></td>
+					</tr>
+					<tr>
+						<td><img src="yellow_square.png" class="sqr"></td>
+						<td><img src="yellow_square.png" class="sqr"></td>
+					</tr>
+				</tr>
+				<tr>
+					<td><img src="yellow_square.png" class="sqr"></td>
+					<td><img src="yellow_square.png" class="sqr"></td>
+					<td><img src="yellow_square.png" class="sqr"></td>
+					<td><img src="yellow_square.png" class="sqr"></td>
+					<td><img src="yellow_square.png" class="sqr"></td>
+					<td><img src="yellow_square.png" class="sqr"></td>
+				</tr>
+			</table>
+		</div>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br>
+		<div id="dicer">
+			<center><img src="red6.png" id="dicer6"><center>
+			<center><img src="red5.png" id="dicer5"><center>
+			<center><img src="red4.png" id="dicer4"><center>
+			<center><img src="red3.png" id="dicer3"><center>
+			<center><img src="red2.png" id="dicer2"><center>
+			<center><img src="red1.png" id="dicer1"><center>
+			<center><img src="white_square.png" id="wdr" style="width : 15%"><center>
+		</div>
+	</body>
+</html>
